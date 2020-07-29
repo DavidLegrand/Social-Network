@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class Name extends React.Component {
+      render() {
+        const name = "David"
+        return <strong>{name}</strong>;
+      }
+    }
+
+    class App extends React.Component {
+      render() {
+        const name = "David"
+        const users = ["Badr", "Anass", name];
+        const img = "https://dummyimage.com/600x400/000/fff";
+        return (
+          <>
+            <p className="text">Hello World !!!</p>
+            <p>il est actuellement {new Date().toLocaleTimeString()}</p>
+            {name && <p>Welcome {name}</p>}
+            <ul>{users.map((u, i) => <li key={i}>{u}</li>)}</ul>
+            <img src={img} />
+          </>
+        )
+      }
+    }
+    setInterval(()=>{
+      ReactDOM.render(<App />, document.getElementById("root"))
+    }, 1000)
+  </script>
+</body>
+
+</html>
