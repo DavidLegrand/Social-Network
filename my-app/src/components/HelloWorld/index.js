@@ -1,7 +1,15 @@
 import React from 'react'
+import Counter from './Counter'
+import { Provider } from 'react-redux'
+import store from '../../store'
 
 function HelloWorld() {
-  return <h1>Hello World !!!</h1>
+
+  return (
+    <Provider store={store}>
+      <Counter></Counter>
+    </Provider>
+  )
 }
 
 export default HelloWorld;
