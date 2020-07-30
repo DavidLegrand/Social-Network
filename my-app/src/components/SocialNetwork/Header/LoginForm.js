@@ -12,16 +12,10 @@ const LoginForm = () => {
   useFetch(endpoint, setfetcheduser)
 
   useEffect(() => {
-    if (fetcheduser)
-      checkPassword()
-  }, [fetcheduser, password])
-
-  const checkPassword = () => {
-    //console.log("mdp tapé : ", password, "mdp bdd : ", fetcheduser[0].password)
-    if (password === fetcheduser.password){
+    if (fetcheduser && password === fetcheduser.password) {
       setUser(fetcheduser)
     }
-  }
+  }, [fetcheduser, password])
 
   const handleSubmit = (e) => {
     e.preventDefault()

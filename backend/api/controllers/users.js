@@ -95,34 +95,52 @@ exports.getFriends = (req, res, next) => {
 }
 
 exports.getPosts = (req, res, next) => {
+  console.log("--- GET USER POSTS")
   const id = req.params.userId;
   let level1, level2, level3, all;
-  /*Post.find({ author: id, parent: null })
+  Post.find({ author: id, parent: null })
     .populate('author', 'avatar firstName lastName userName')
     .exec()
     .then(posts => {
       if (posts) {
-        userPosts = posts
-        const postsId = posts.map(post => post._id)
-        return Post.find({ parent: { $in: postsId } })
+        level1 = posts
+        const level1Id = posts.map(l1 => l1._id)
+        return Post.find({ parent: { $in: level1Id } })
           .populate('author', 'firstName lastName userName avatar')
       } else {
         res.status(404).json({ message: 'invalid id' })
       }
     })
-    .then(comments => {
-      if (comments) {
-        const commentsId = comments.map(comments => comment._id)
-        return Post.find({ parent: { $in: commentsId } })
+    .then(posts => {
+      if (posts) {
+        level2 = posts
+        const level2Id = posts.map(l2 => l2._id)
+        return Post.find({ parent: { $in: level2Id } })
           .populate('author', 'firstName lastName userName avatar')
       } else {
         res.status(404).json({ message: 'invalid id' })
       }
     })
-    .then()
+    .then(posts => {
+      if (posts) {
+        level3 = posts
+        all = level1.map(l1 => {
+          l1.children = level2
+            .filter(l2 => l2.parent.equals(l1._id))
+            .map(l2 => {
+              l2.children = level3.filter(l3 => l3.parent.equals(l2._id))
+              return l2
+            })
+          return l1
+        })
+        res.status(200).json(all)
+      } else {
+        res.status(404).json({ message: 'invalid id' })
+      }
+    })
     .catch(error => {
       res.status(500).json(error)
-    })*/
+    })
 }
 
 exports.getLikes = (req, res, next) => {

@@ -14,16 +14,4 @@ const useFetch = (endpoint, setter) => {
   }, [endpoint, setter])
 }
 
-const useGet = (endpoint) => {
-  useEffect(() => {
-    if (endpoint) {
-      console.log(endpoint)
-      fetch(endpoint)
-        .then(res => res.json())
-        .catch(err => console.error(err))
-    }
-  }, [endpoint])
-
-}
-
-export { useFetch, useGet }
+export { useFetch }

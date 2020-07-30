@@ -78,7 +78,7 @@ exports.getComments = (req, res, next) => {
       if (posts) {
         grandchildren = posts
         all = children.map(parent => {
-          parent.children = grandchildren.filter(child => { console.log(child.parent, parent._id); return child.parent.equals(parent._id) })
+          parent.children = grandchildren.filter(child => { return child.parent.equals(parent._id) })
           return parent
         })
         res.status(200).json(all)
