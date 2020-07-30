@@ -4,7 +4,7 @@ import User from '../../../context/SocialNetwork'
 const LogoutButton = () => {
   const { setUser } = useContext(User)
   return (
-    <div>
+    <div className="logout">
       <button onClick={()=>{setUser(null)}}>Déconnexion</button>
     </div>
   )

@@ -14,18 +14,19 @@ import {
 
 const SocialNetwork = () => {
   const [user, setUser] = useState(null)
-  
+
   return (
     <User.Provider value={{ user, setUser }}>
       <Router>
         <Header />
-        <Switch>
-          <Route path="/page/:pageName" component={Page} />
-          <Route path="/profile/:userName" component={UserProfile} />
-          <Route path="/profile" component={UserProfile} />
-          <Route path="/newsfeed" component={NewsFeed} />
-          <Route path="/" component={NewsFeed} />
-        </Switch>
+        <div className="container">
+          <Switch>
+            <Route path="/page/:pageName" component={Page} />
+            <Route path="/profile/:userName" component={UserProfile} />
+            <Route path="/newsfeed" component={NewsFeed} />
+            <Route path="/" component={NewsFeed} />
+          </Switch>
+        </div>
       </Router>
     </User.Provider>
   )

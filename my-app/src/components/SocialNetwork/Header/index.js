@@ -8,10 +8,12 @@ const Header = () => {
   const { user } = useContext(User)
   return (
     <div className="header">
+      <div className="container">
       {user ?
         <><Menu /><LogoutButton /></> :
         <LoginForm />
       }
+      </div>
     </div>
   )
 }

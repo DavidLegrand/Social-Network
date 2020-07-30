@@ -1,38 +1,160 @@
 .App {
-  text-align: center;
+    /* text-align: center; */
+    color: #282c34
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header {
+    height: 50px;
+    background-color: #3b5998;
+    color: white
+}
+
+.header .container div,
+.header ul {
+    display: inline-block;
+    line-height: 50px;
+}
+
+.tabs {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.tabs li {
+    background-color: #3b589800;
+}
+
+.tabs li,
+.menu li {
+    display: inline-block;
+    line-height: 50px;
+}
+
+.menu li a {
+    color: white;
+}
+
+.tabs li a.active {
+    background-color: #3b589811;
+    font-weight: bold;
+}
+
+.tabs li a,
+.menu li a {
+    text-decoration: none;
+    padding: 0 20px;
+    vertical-align: super;
+}
+
+.tabs li a {
+    border-radius: 5px 5px 0 0;
+    box-shadow: -1px -1px 1px #3b589855;
+    border-top: 1px #3b589855 solid;
+    border-left: 1px #3b589855 solid;
+    display: block;
+    min-width: 100px;;
+}
+.tabs li a:last-child{
+    border-right: 1px #3b589855 solid;
+}
+
+.menu {
+    width: 50%;
+    text-align: left;
+}
+
+.login {
+    width: 100%;
+    text-align: right;
+}
+
+.logout {
+    width: 50%;
+    text-align: right;
+}
+
+.login input,
+.login button,
+.logout button {
+    margin: 0 10px;
+}
+
+.avatar,
+.mini-avatar {
+    border-radius: 100%;
+    background-color: white;
+    border: 1px silver solid
+}
+
+.avatar {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.mini-avatar {
+    width: 30px;
+}
+
+a {
+    color: #3b5998
+}
+
+.title {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    background-color: #ffffff44;
+}
+
+.banner {
+    padding: 50px 50px;
+    background-size: cover;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 15px;
+    background-color: #3b589811;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
